@@ -1,0 +1,128 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html{
+	width: 100%;
+	height: 100%;
+}
+body{
+	width: 100%;
+	height: 100%;
+	background-color: #ccc;
+	font-family: "微软雅黑", Arial;
+	font-size: 14px;
+	color: #555;
+	overflow: hidden;
+}
+
+.gallery{
+	width: 100%;
+	height: 100%;
+	background-color: #eee;
+	overflow: hidden;
+
+	-webkit-perspective: 800px;
+}
+
+.photo{
+	width: 240px;
+	height: 330px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -165px 0 0 -120px;
+	z-index: 0;
+	-webkit-transform: scale(1);
+	-webkit-transition: all 1s;
+}
+
+.photo-center{
+	top: 50%;
+	left: 50%;
+	margin: -165px 0 0 -120px;
+	z-index: 1;
+	-webkit-transform: scale(1.3);
+}
+.photo-rotate{
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition: all 1s;
+}
+.photo-rotate .side{
+	-webkit-backface-visibility: hidden;
+}
+.photo-rotate .front-side,
+.photo-front{
+	-webkit-transform: rotateY(0deg);
+}
+.photo-rotate .back-side,
+.photo-back{
+	-webkit-transform: rotateY(180deg);
+}
+.side{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+}
+.front-side{
+/*	display: none;*/
+
+}
+.front-side .image{
+	width: 100%;
+	height: 90%;
+	padding: 10px 20px;
+
+	box-sizing: border-box;
+}
+.front-side .image img{
+	width: 100%;
+	height: 100%;
+}
+.front-side .caption{
+	font-size: 16px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.back-side .describe{
+	padding: 10px 20px;
+	line-height: 1.5em;
+	text-indent: 1em;
+	color: #2ABF9E;
+	/*display: none;*/
+}
+
+
+#controll{
+	width: 100%;
+    height: 50px;
+    position: absolute;
+    top: 90%;
+    text-align: center;
+}
+
+#controll .piccontroll{
+	list-style: none;
+	line-height: 50px;
+}
+
+#controll .piccontroll .pic{
+	width: 15px;
+    height: 15px;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: #F77676;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-transition: all 300ms;
+}
+
+#controll .piccontroll .active{
+	-webkit-transform: scale(1.3);
+    background-color: #68D1F7;
+}
